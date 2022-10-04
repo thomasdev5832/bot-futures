@@ -1,18 +1,18 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Bot Spot" />
+  <img src="./.github/app.gif" alt="Bot Futures" />
 
   &#xa0;
 
-  <!-- <a href="https://botspot.netlify.app">Demo</a> -->
+  
 </div>
 
-<h1 align="center">CryptoTrader Bot Spot Binance</h1>
+<h1 align="center">CryptoTrader Bot Futures Binance</h1>
 
 <br>
 
 ## :dart: About ##
 
-Trader Bot Spot Binance 
+Trader Bot Futures Binance 
 
 ## :sparkles: Features ##
 
