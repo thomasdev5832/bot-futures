@@ -1,17 +1,26 @@
 {
   "name": "bot-futures",
   "version": "1.0.0",
-  "description": "",
+  "description": "<div align=\"center\" id=\"top\">    <img src=\"./.github/app.gif\" alt=\"Bot Futures\" />",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Thomas",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.3",
     "ws": "^8.9.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasdev5832/bot-futures.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thomasdev5832/bot-futures/issues"
+  },
+  "homepage": "https://github.com/thomasdev5832/bot-futures#readme"
 }
