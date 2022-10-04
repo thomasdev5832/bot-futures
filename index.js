@@ -14,7 +14,7 @@ ws.onmessage = async (event) => {
 
     const price = parseFloat(obj.p); // string to float
     
-    if(price < 20070 && !isOpened){
+    if(price < 20150 && !isOpened){
         console.log("Buy!");
         newOrder("BTCUSDT", "0.001", "BUY");
         isOpened = true;
@@ -26,8 +26,7 @@ ws.onmessage = async (event) => {
     }
 }
 
-async function newOrder(symbol, quantity, side){
-    
+async function newOrder(symbol, quantity, side){  
     const data = { symbol, quantity, side };
     data.type = "MARKET";
     data.timestamp = Date.now();
@@ -38,11 +37,11 @@ async function newOrder(symbol, quantity, side){
         .digest("hex");
 
     data.signature = signature;
-
+    
     const result = await axios({
         method: "POST",
         url: process.env.API_URL + "/v1/order?" + new URLSearchParams(data),
         headers: { "X-MBX-APIKEY": process.env.API_KEY } 
-    })//.catch((e) => { console.error(e); process.exit(1) })
-    
+    });
+    console.log(result.data);
 } 
