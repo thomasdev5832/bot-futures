@@ -14,12 +14,12 @@ ws.onmessage = async (event) => {
 
     const price = parseFloat(obj.p); // string to float
     
-    if(price < 20150 && !isOpened){
+    if(price < 20300 && !isOpened){
         console.log("Buy!");
         newOrder("BTCUSDT", "0.001", "BUY");
         isOpened = true;
     }
-    else  if(price <= 20050 && isOpened){
+    else  if(price <= 20280 && isOpened){
         console.log("Sell!");
         newOrder("BTCUSDT", "0.001", "SELL");
         isOpened = false;
@@ -38,10 +38,14 @@ async function newOrder(symbol, quantity, side){
 
     data.signature = signature;
     
-    const result = await axios({
-        method: "POST",
-        url: process.env.API_URL + "/v1/order?" + new URLSearchParams(data),
-        headers: { "X-MBX-APIKEY": process.env.API_KEY } 
-    });
-    console.log(result.data);
+    try{
+        const result = await axios({
+            method: "POST",
+            url: process.env.API_URL + "/v1/order?" + new URLSearchParams(data),
+            headers: { "X-MBX-APIKEY": process.env.API_KEY } 
+        });
+        console.log(result.data);
+    }catch(err){
+        console.log(err);
+    }
 } 
